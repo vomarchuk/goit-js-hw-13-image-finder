@@ -9,6 +9,13 @@ export default class ImagesApiService {
 
   fetchImages() {
     const url = `${BASE_URL}/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${API_KYE}`;
+    // const response = await fetch(url);
+    // const images = await response.json();
+    // return images;
+    // return images.then(({ hits }) => {
+    //   this.incrementPage();
+    //   return hits;
+    // });
     return fetch(url)
       .then(response => response.json())
       .then(({ hits }) => {
