@@ -27,17 +27,17 @@ ul {
     height: 35px;
   }
 }
+
 .main {
   text-align: center;
-  // align-items: center;
   padding-bottom: 30px;
 }
+
 .button {
   width: 150px;
   height: 30px;
   border: none;
   border-radius: 5px;
-
   cursor: pointer;
 }
 
@@ -46,35 +46,58 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
   li {
     margin: 25px;
   }
-  .photo-card {
-    color: white;
+}
 
-    border: 3px solid white;
-    border-radius: 5px;
+.photo-card:hover {
+  box-shadow: 0 0 35px #ccc;
 
-    .img {
-      display: block;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .stats {
-      justify-content: center;
-      display: flex;
-    }
-    .stats :not(:first-child) {
-      margin-left: 30px;
-    }
-
-    .stats-item {
-      display: flex;
-      align-items: center;
-    }
+  .stats {
+    transform: translateY(-150px);
+    overflow: visible;
   }
+}
+.photo-card {
+  position: relative;
+
+  border: 3px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+
+  .img {
+    display: block;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+.stats {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%, 0);
+  justify-content: center;
+
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: 0.6s;
+}
+.stats :not(:first-child) {
+  margin-left: 30px;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+}
+
+.stats-item .material-icons {
+  margin-right: 5px;
 }
 
 .is-hidden {

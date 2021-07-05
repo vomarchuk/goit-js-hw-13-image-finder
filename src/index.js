@@ -21,7 +21,6 @@ async function onSearch(e) {
   if (checkInput(query)) {
     imagesApiService.query = query;
     imagesApiService.resetPage();
-    console.log(imagesApiService);
     imagesApiService
       .fetchImages()
       .then(images => {
