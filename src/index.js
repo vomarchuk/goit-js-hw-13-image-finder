@@ -14,13 +14,14 @@ refs.searchForm.addEventListener('submit', onSearch);
 refs.btnLoadMore.addEventListener('click', onLoadMore);
 refs.btnLoadMore.classList.add('is-hidden');
 
-function onSearch(e) {
+async function onSearch(e) {
   e.preventDefault();
   const query = e.currentTarget.elements.query.value;
 
   if (checkInput(query)) {
     imagesApiService.query = query;
     imagesApiService.resetPage();
+    console.log(imagesApiService);
     imagesApiService
       .fetchImages()
       .then(images => {
